@@ -1,0 +1,10 @@
+{
+    "fname": "Hemant",
+    "lname": "devde",
+    "email":"hemant@gmail.com",
+    "phone":9876543210,
+    "address":"Indore",
+    "pswd":"indore@123",
+    "role":"BDA"
+
+}
