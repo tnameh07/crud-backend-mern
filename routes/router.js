@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 });
 router.post("/add", createEmployee);
 router.get("/getAll", getAllEmployees);
-router.get("/get", getEmployee);
+router.get("/:id", getEmployee);
 router.put("/:id", updateEmployee);
 router.delete("/:id", deleteEmployee);
 // router.get('/', createEmployee);

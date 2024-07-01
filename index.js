@@ -1,5 +1,6 @@
 import express from "express";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+import { connectDB } from "./dbconnection/dbconnect.js";
 import { router } from "./routes/router.js";
 
 const app = express();
@@ -7,15 +8,15 @@ app.use(express.json());
 app.use("/app/products", router);
 
 const port = process.env.port || 3000;
-
-mongoose
-  .connect("mongodb://localhost:27017/weddingmanagment")
-  .then(() => {
-    console.log("Connected to database ");
-  })
-  .catch((error) => {
-    console.log("message", error);
-  });
+connectDB();
+// mongoose
+//   .connect("mongodb://localhost:27017/weddingmanagment")
+//   .then(() => {
+//     console.log("Connected to database ");
+//   })
+//   .catch((error) => {
+//     console.log("message", error);
+//   });
 
 app.get("/", (req, res) => {
   res.status(200).send("Home Page");
